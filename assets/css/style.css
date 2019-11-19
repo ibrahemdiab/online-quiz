@@ -1,0 +1,535 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden; 
+}
+.tilt {
+    -webkit-transition: all 0.9s ease;
+    -moz-transition: all 0.9s ease;
+    -o-transition: all 0.9s ease;
+    -ms-transition: all 0.9s ease;
+    transition: all 0.9s ease;
+}
+.tilt:hover {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    cursor: pointer;
+}
+
+/* Start Navbar Css Settings*/
+#nav {
+    margin: 0;    
+}
+.navbar{
+    padding-bottom: 10px;
+}
+.navbar-toggle i {
+	color: #fff;
+    padding-top: 5px;
+}
+.navbar-brand {
+    padding-top: 25px;
+    color: #FFF;
+    font-size: 25px;
+}
+.navbar-brand:hover{
+    color: #FFF;
+}
+.navbar-nav li a {
+	padding-top: 30px;
+    font-size: 12px;
+    color: #FFF;
+    
+}
+.navbar-nav li a.current,
+.navbar-nav li a:focus,
+.navbar-nav li a:hover {
+	background-color: transparent;
+	color: #fff;
+}
+/* End Navbar Css Settings*/
+
+
+/*Start Header CSS Settings */
+#header {
+	padding: 0;
+}
+#header .carousel-inner .item {
+    background-size: cover;
+}
+.carousel-caption {
+    top: 30%;
+}
+.carousel-caption h1 {
+    font-size: 50px;
+    font-weight: bolder;
+}
+.carousel-caption .lead {
+    color: #fff;
+    font-size: 18px;
+    padding-top: 15px;
+}
+.carousel-caption .btn{
+    margin-top: 50px;
+    border-radius: 1px;
+    border: 0;
+    padding: 10px 35px;
+    background: ORANGERED;
+}
+/*End Header CSS Settings */
+
+
+/*Start Features CSS Settings */
+.features{
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.features .item{
+    padding-bottom: 25px;
+}
+.features .item i{
+    padding-bottom: 10px;
+    color: ORANGERED;
+}
+.features .item h5{
+    font-weight: bold;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 16px;
+}
+.features .item .lead{
+    font-size: 16px;
+}
+/*End Features CSS Settings */
+
+
+/* Start Css Settings of Works Section */
+.works{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgba(0,0,0,0.1);
+}
+.works .port{
+    padding-bottom: 25px;
+}
+.works .grid figure {
+    margin: 0;
+    position: relative;
+}
+.works .port figure{
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.2);
+}
+.works .grid figure img {
+    width: 100%;
+    display: block;
+    position: relative;
+    border: 1px solid gray;
+}
+.works .grid figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: rgba(0,0,0,0.9);
+}
+.works .grid figcaption h5 {
+    margin: -140px 0 0px 0;
+    color: tomato;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    padding: 15px 0;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 16px
+}
+.works .mask figure {
+    overflow: hidden;
+}
+.works .mask figure img {
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+}
+.works .mask figure:hover img{
+    -webkit-transform: translateY(-300px);
+    -moz-transform: translateY(-300px);
+    -ms-transform: translateY(-300px);
+    transform: translateY(-300px);
+}
+.works .mask figcaption {
+    height: 50px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+    -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+    transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+.works .mask figure:hover figcaption {
+    opacity: 2;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+    -moz-transition: -moz-transform 0.4s, opacity 0.1s;
+    transition: transform 0.4s, opacity 0.1s;
+}
+/* End Css Settings of Portfolio Section */
+
+
+/*Start Team CSS Settings */
+.team{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.team .member{
+    padding-bottom: 30px;
+    margin-top: 30px
+}
+.team .member img{
+    margin-top: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px
+}
+.team .member h3{
+    font-weight: bolder;
+}
+.team .member h5{
+    color: ORANGERED;
+}
+.team .member .lead{
+    font-size: 14px;
+    color: rgba(0,0,0,0.9);
+    padding: 10px
+}
+.team .member a .fa{
+    font-size: 28px;
+    margin-right: 10px;
+    margin-left: 15px;
+    color: rgba(0,0,0,0.9);
+}
+.team .member a .fa-facebook-square:hover{
+    color: #3b5998;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.9s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.team .member a .fa-twitter-square:hover{
+    color: #55acee;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.team .member a .fa-linkedin-square:hover{
+    color: #007bb5;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+/*End Team CSS Settings */
+
+
+
+/*Start Testimonial CSS Settings */
+.test{
+    background: rgba(0,0,0,0.1);
+    padding-bottom: 100px;
+    padding-top: 80px
+}
+.test .testimonial{    
+    margin: 10px 15px;
+    padding: 30px 0 30px 20px;
+    position: relative;
+}
+.test .testimonial .pic{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    z-index: 2;
+    border: 5px solid gray;
+}
+.test .testimonial .pic img{
+    margin: 0 auto;
+    text-align: center;
+}
+.testimonial-review{
+    border: 5px solid tomato;
+    font-size: 17.5px;
+    margin: 0 0 20px;
+    padding: 10px 20px;
+}
+.test .testimonial .testimonial-review p{
+    font-style: italic;
+    font-weight: normal;
+    line-height: 24px;
+    padding: 9px 0 0 49px;
+    color: #7c7c7c;
+    font-size: 15px;
+    position: relative;
+}
+.test .testimonial .testimonial-review p:before{
+    content: "\f10d";
+    font-family: 'FontAwesome';
+    position: absolute;
+    left:0;
+    top:10px;
+    font-size: 30px;
+}
+.test .testimonial .testimonial-title{
+    padding: 0 0 0 48px;
+    font-size: 15px;
+    color:#7c7c7c;
+}
+.test .testimonial .testimonial-title a{
+    color:#dc005a;
+    font-size: 15px;
+    text-decoration: none
+}
+/*End Testimonial CSS Settings */
+
+
+/*Start Download CSS Settings */
+.dwn{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.dwn .download h2{
+    font-weight: bold;
+}
+.dwn .download h4{
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.dwn .download .btn{
+    border-radius: 0;
+    background: ORANGERED;
+    font-weight: bold;
+    padding: 10px 25px;
+    color: #FFF;
+}
+/*End Download CSS Settings */
+
+
+/* Start Css of Contact Section */
+.contact{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background: rgb(58,62,100);
+    color: aliceblue
+}
+.contact .loc{
+    padding-bottom: 15px
+}
+.contact .loc h4{
+    font-weight: bold;
+    padding-bottom: 10px
+}
+.contact .loc .fa{
+    border: 2px solid white;
+    font-size: 14px;
+    padding: 7px
+}
+.contact .loc .fa-facebook{
+    padding: 7px 10px
+}
+.contact .loc .lead{
+    font-size: 14px;
+    color: rgba(240,248,255,0.7);
+}
+.contact .loc h5{
+    color: rgba(240,248,255,0.7);
+}
+/* End Css of Contact Section */
+
+
+/* Start Css of Footer Section */
+.footer{
+    background: rgb(49,52,85);
+    color: rgba(240,248,255,0.5);
+    padding-bottom: 25px;
+    padding-top: 30px
+}
+.footer a{
+    color: aliceblue;
+    text-decoration: none
+}
+.footer a:hover{
+    color: ORANGERED
+}
+/* End Css of Footer Section */
+
+
+/* Start CSS of Back to Top */
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(232, 98, 86, 0.8) url(../imgs/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+/* End CSS of Back to Top */
+
+
+.loader{
+    text-align: center;
+    background: rgb(26,188,156);
+    color: ORANGERED;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+.sk-folding-cube {
+  margin: 200px auto;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); 
+}
+.sk-folding-cube .sk-cube:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+          animation: sk-foldCubeAngle 2.4s infinite linear both;
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+          transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+          transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+          transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; 
+}
+.sk-folding-cube .sk-cube4:before {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  } 
+}
+
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  }
+}

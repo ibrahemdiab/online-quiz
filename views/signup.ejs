@@ -1,0 +1,69 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+
+<div class="container text-center" >
+        <h3>Creat acount?</h3>
+            <form action="/signup" method="POST">
+                    <input type="text" class="form-control" placeholder="UserName" name="T_name" >
+                    <br>
+                    <% let teacherErr =  validationErr.find(err=> err.param === 'T_name') 
+                    if (teacherErr){%>
+                      <p class="aler alert-danger">
+                             <%= teacherErr.msg %>
+                      </p>
+                     <%} %>
+                    <input type="text" class="form-control" placeholder="Email" name="Email">
+                    <br>
+                    <% let EmailErr =  validationErr.find(err=> err.param === 'Email') 
+                    if (EmailErr){%>
+                      <p class="aler alert-danger">
+                             <%= EmailErr.msg %>
+                      </p>
+                     <%} %>
+                    <input type="password" class="form-control" placeholder="Password" name="password"  >
+                    <br>
+                    <% let passwordErr =  validationErr.find(err=> err.param === 'password') 
+                    if (passwordErr){%>
+                      <p class="aler alert-danger">
+                             <%= passwordErr.msg %>
+                      </p>
+                     <%} %>
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="c_password" >
+                    <br>
+                    <% let c_passwordErr =  validationErr.find(err=> err.param === 'c_password') 
+                    if (c_passwordErr){%>
+                      <p class="aler alert-danger">
+                             <%= c_passwordErr.msg %>
+                      </p>
+                     <%} %>
+                <div style=" float: left"  >
+            
+                       <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="exampleRadios1" value="teacher" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                             Is Teacher
+                            </label>
+                       </div>
+                       <div class="form-check">
+                             <input class="form-check-input" type="radio" name="type" id="exampleRadios2" value="Student">
+                             <label class="form-check-label" for="exampleRadios2">
+                             Is Student
+                            </label>
+                       </div>                
+                   </div>
+              
+                    <button class="btn btn-primary" type="submit">Creat account</button> 
+                    <label>I have acount <a href="/login" >login </a></label>
+            </form>
+            <% if (authErr ){%>
+            <alert class="alert-danger">
+                <%= authErr %>
+            </alert>
+            <%}%>
+            <br>
+            
+           
+
+
+<%- include('parts/footer')%>

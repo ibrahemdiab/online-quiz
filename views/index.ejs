@@ -1,0 +1,161 @@
+
+
+        <!-- Start Navbar Section -->
+        
+            
+            
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+
+       <div style="background-color:rgb(63, 205, 50); height:600px;"  >
+          <% if (!userid) {%>
+          <div class="row">
+            <br>
+               <div class="col-6">
+                 <br>
+                      <div style="margin-left: 50px; ">
+                        <h4>  Join us now as teacher   
+                          <br>
+                          and Create youre quize
+                          <br>
+                            for students and schools
+                          </h4>
+                      </div>
+                       
+                       
+                      <p style="margin-left: 60px;">
+                            Ok! You have a group of students and you want to know how to create an online test?
+                            <br> Don't look any further. You're in the right place. With our online examination software
+                            <br> you can create online tests in no time.
+
+                      </p>
+                     <br>
+                     <br>
+                     <br>
+                 </div>
+
+                  <div class="col-6">
+                     
+                  </div>
+         </div>
+
+
+         <div class="row">
+                  <div class="col-6">
+                      <div style="margin-left: 50px; ">
+                       <h4> or Jon us as student 
+                        <br>
+                        and view all published quizes
+                      </h4> 
+                      </div>
+
+                    <p style="margin-left: 60px;">
+                          Ok! You have quizes and that published by teashers?
+                          <br> youe can choose an quize and start to test tour self
+                        
+                    </p>
+                    <a href="/signup" style="margin-left: 500px; font:bold;" class="btn btn-danger" >Signup</a>
+
+                  </div>
+
+                  <div class="col-6">
+                      <img src="stu.jpg" style="float: right; margin-top: -30px;">
+                  </div>
+         </div>
+         <%}%>
+
+         <% if (userid && usertype === "teacher") {%>
+          <div class="row">
+               <div class="col-6">
+                 <br>
+                      <div style="margin-left: 50px; ">
+                         <h4> welcome Prof <span style="color: rgb(19, 22, 218)"> <%= username%></span>
+                          <br>
+                          <br>
+                            now you can creat your quize and save or publishe
+                            <br> 
+                             for your students
+                            </h4>
+                      </div>
+
+                      <p style="margin-left: 60px;">
+                            Ok! You have a group of students and you want to know how to create an online test?
+                            <br> Don't look any further. You're in the right place. With our online examination software
+                            <br> you can create online tests in no time.
+
+                      </p>
+                      <% let star="star"%>
+      
+                      <form action="/creatQuize/:star" method="GET">
+                        <input type="hidden" value="start" name="start">
+                      <input type="submit" style="margin-left: 200px; font:bold;" class="btn btn-danger" value="GREAT NEW QUIZE">
+                      </form>
+                 </div>
+
+                  <div class="col-6">
+                     
+                  </div>
+         </div>
+
+
+         <div class="row">
+                  <div class="col-6">
+                     
+                  </div>
+
+                  <div class="col-6">
+                      <img src="stu.jpg" style="float: right; margin-top: -30px;">
+                  </div>
+         </div>
+         <%}%>
+         <% if (userid && usertype === "Student") {%>
+          <div class="row">
+              <div class="col-6">
+                <br>
+                <div style="margin-left: 50px; ">
+                     <h1 >
+                         Welcome <span style="color:rgb(19, 22, 218)"> <%= username%></span><br>
+                        </h1>
+                        <br>
+                         <h3>now you can view all quizes choose one to start </h3>  
+                       <br>
+                     
+                   </div>
+                     <p style="margin-left: 60px;">
+                        Ok! You have quizes and that published by teashers?
+                        <br> youe can choose an quize and start to test tour self
+                      
+                     </p>
+                     <br>
+                     <br>
+
+                     <input type="submit" style="margin-left: 200px; font:bold;" class="btn btn-danger" value="view quizes ">
+
+                </div>
+
+                 <div class="col-6">
+                    
+                 </div>
+        </div>
+
+
+        <div class="row">
+                 <div class="col-6">
+                    
+                 </div>
+
+                 <div class="col-6">
+                     <img src="stu.jpg" style="float: right; margin-top: -30px;">
+                 </div>
+        </div>
+        <%}%>
+       </div>
+            
+                
+        
+  
+      
+      
+
+<%- include('parts/footer')%>

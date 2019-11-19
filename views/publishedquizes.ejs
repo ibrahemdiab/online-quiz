@@ -1,0 +1,30 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+
+  
+<% if(!(quizes.length === 0) ) { %>
+    <br>
+    <ul>
+
+      <% for(let quiez of quizes) { %>
+
+          <li style="font: bold; font-size: 20px">
+            <span style="color: blue;"><%= quiez.Q_name%></span><br>
+            <span style=" margin-left: 10px;color: blueviolet">Teacher:</span>
+            <span ><%= quiez.T_name%></span><br>
+            <span style="margin-left: 10px; color:brown">Time:</span>
+            <span ><%= quiez.Time%></span> 
+           
+            <hr>
+        </li>
+        
+        <% }%> 
+    </ul>
+
+<% } else {%> 
+<h4>there is no published quizes</h4>
+<%}%>
+
+
+<%- include('parts/footer')%>

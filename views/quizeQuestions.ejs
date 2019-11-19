@@ -1,0 +1,124 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+
+<div class="container">
+      
+     <br>
+    <span style="color: tomato; font:bold;" >Quize Name:</span><span style="color:darkblue; font:bold;" ><%= quizename%> </span>
+    <br>
+    
+    <span style="color: tomato; font:bold;"> Quize Time:</span><span style="color:darkblue; font:bold;" ><%= quizetim%> </span>
+    <span><a href="/publishQuiz/<%=quizeid%>" style=" margin-left: 150px;font:bold; font-size: 20px ">publish quize </a></span>  
+    <span> <input  style=" margin-left: 150px;font:bold; font-size: 20px " aria-expanded="false" s type="button" onclick='enabel("<%= quizename%>","<%= quizetim%>","<%= quizeid %>")' class="btn btn-danger" value="+ADD QUESTION"></span>
+
+
+    <hr>
+    
+
+    <div class="row">
+        <div style="width: 650px;">
+                <% if(!(question.length === 0) ) {
+                  
+                 
+                    let i=1 
+                     %>
+                   
+                        <% for(let q of question) {
+                          var x= q._id
+                          %>
+                <div class="row">
+            
+                     <div class="col">
+                          
+                  <h6><%=i%>:<%=q.Question%> </h6>
+                  <span style="font:100 bold;">a: </span> <span ><%=q.A%></span> 
+                  <span style="margin-left: 30px;font:100 bold;">b: </span><span ><%=q.B%></span> 
+                  <span style="margin-left: 30px;font:100 bold;">c: </span><span ><%=q.C%> </span>
+                  <span style="margin-left: 30px;font:100 bold; ">d:</span><span style="color:blue" ><%=q.Correct%></span> 
+                     </div>
+            
+                     <div >
+                            <input type="button" onclick='update("<%= q._id%>","<%= quizeid %>","<%= quizetim%>","<%= quizename%>")'  value="Update" />
+                            <input type="submit" href="/deletqestion/<%=q._id%>/<%=quizeid%>/<%=quizename%>/<%= quizetim%>" style=" margin-right: 2px;" value="Delet" />
+                     </div>
+            
+                </div>
+                <%i++ }}%>
+            
+        </div>
+
+        <div   >
+                <form action="/savequestion" method="POST" ">
+                    <div id="di" style=" position: fixed;padding: 10px; visibility: hidden; border: solid gray 2px; background-color: rgb(245, 245, 201) ">
+                            <label style="color: tomato; font-size: 30px; font: bold; margin-left:10px;margin-top: 10px;" >question:</label> <input type="text" class="form-control" name="Question"  style="width:500px;  margin-top: 5px;margin-left: 10px;">
+                           
+            
+                            <br>
+                            <label style="color:blue; font:bold; margin-left: 30px"> choose1:</label> <input style="margin-left: 47px" type="text"  name="A" >
+                            <br>
+                            <br>
+                            <label style="color:blue; font:bold; margin-left: 30px"> choose2:</label> <input style="margin-left: 47px;" type="text"  name="B" >
+                            <br>
+                            <br>
+                            <label style="color:blue; font:bold; margin-left: 30px"> choose3:</label> <input style="margin-left: 47px" type="text" name="C" >
+                            <br>
+                            <br>
+                            <label style="color:green; font:bold; margin-left: 30px"> correct answer: </label> <input  type="text" name="correct"  >
+                            <br>
+                            <input id="name" type="hidden" name="name" >
+                            <input id="q_id" type="hidden" name="q_id" value="<%=quizeid%>" >
+                            <input id="question_id" type="hidden" name="question_id" value="new" >
+
+                            <input id="time" type="hidden" name="time" >
+                            <input type="hidden" name ="onupdate" value="onupdate"/>
+                            
+                            <input  style=" margin-left: 150px" type="submit"  onclick="save()"  class="btn btn-primary"  value="SAVE QUESTION">
+                            <input type="submit" onclick='cancel()' class="btn btn-primary" value="Cancel"  />
+
+                    </div>
+                </form>
+                   
+            
+          </div>
+
+    </div>
+        
+
+    <script type="text/javascript">
+
+        function enabel(name,time,q_id){
+            document.getElementById('di').style.visibility='visible';
+
+         
+          document.getElementById('name').value=name;
+          document.getElementById('time').value=time;
+       
+         document.getElementById('q_id').value=q_id;
+
+    
+        
+        }
+        function save()
+      {
+        document.getElementById('di').style.visibility='hidden'  
+      }
+      function cancel()
+      {
+        document.getElementById('di').style.visibility='hidden'  
+      }
+
+      function update(question_id,quizeid,time,name){
+
+        document.getElementById('di').style.visibility='visible';
+
+        document.getElementById('question_id').value=question_id;
+        document.getElementById('q_id').value=quizeid;
+        document.getElementById('name').value=name;
+        document.getElementById('time').value=time;
+        console.log(name , time)
+      }
+     
+    </script>  
+
+<%- include('parts/footer')%>

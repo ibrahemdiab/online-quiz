@@ -1,0 +1,32 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+
+  
+<% if(!(quizes.length === 0) ) { %>
+    <br>
+    <ul>
+
+      <% for(let quiez of quizes) { %>
+          <% var quizeid=quiez._id%>
+          <li style="font: bold; font-size: 20px">
+            <span style="color: blue;"><%= quiez.Q_name%></span><br>
+            <span style=" margin-left: 10px;color: blueviolet">Teacher:</span>
+            <span ><%= quiez.T_name%></span><br>
+            <span style="margin-left: 10px; color:brown">Time:</span>
+            <span ><%= quiez.Time%></span> 
+            <a href="/quizeQuestions/<%=quiez._id%>/<%= quiez.Q_name%>/<%= quiez.Time%>"  style="margin-left: 100px;" >view and update</a>
+            <a href="/publishQuiz/<%=quizeid%>"  style="margin-left: 100px;" >publish</a>
+
+            <hr>
+        </li>
+        
+        <% }%> 
+    </ul>
+
+<% } else {%> 
+<h4>there is no saved quizes</h4>
+<%}%>
+
+
+<%- include('parts/footer')%>

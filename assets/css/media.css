@@ -1,0 +1,40 @@
+
+/* Smart PHones and Tablets*/
+
+@media (max-width: 767px){
+    .carousel-caption h1{
+        font-size: 22px;
+    }
+    .carousel-caption .lead{
+        font-size: 14px;
+    }
+    .portfolio .grid figcaption h5 {
+    margin: -100px 0 0px 0;
+    }
+    .portfolio .mask figure:hover img{
+    -webkit-transform: translateY(-450px);
+    -moz-transform: translateY(-450px);
+    -ms-transform: translateY(-450px);
+    transform: translateY(-450px);
+}
+}
+
+/* Small Screens*/
+
+@media (min-width: 768px) and (max-width: 991px){
+    .portfolio .grid figcaption h5 {
+    margin: -60px 0 0px 0;
+    }
+}
+
+/* Medium Screens */
+
+@media (min-width: 992px) and (max-width: 1199px){
+	
+}
+
+/* Large Screens */
+
+@media (min-width: 1200px){
+
+}

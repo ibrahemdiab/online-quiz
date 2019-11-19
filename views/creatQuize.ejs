@@ -1,0 +1,155 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+<div class="container">
+        <div class="row">
+          <div class="col">
+               <% if (comefrom === "creatQuize") {%>
+                
+                <br>
+                <label style="color: tomato; font:bold;" >Quize Name</label><label style="color:darkblue; font:bold;" ><%= name%> </label>
+                <br>
+                
+                <label style="color: tomato; font:bold;"> Quize Time</label><label style="color:darkblue; font:bold;" ><%= time%> </label>
+
+                <input type="hidden" value="<%= name%>" id="name"  name="name" >
+                <input type="hidden" value="<%= time%>"    id="time"  style="margin-left: 5px;" type="text" name="time">
+                <%} else {%>
+                
+                <form>
+                <div  style="  margin-left: 50px; margin-top: 30px; font:bold;">
+                        <label style="color: tomato; font:bold;" >Quize Name</label> <input type="text" id="name"  name="name" >
+                        <br>
+                        
+                        <label style="color: tomato; font:bold;"> Quize Time</label> <input id="time" style="margin-left: 5px;" type="text" name="time">
+                       
+                </div>
+            </form>
+            <%}%>
+          </div>
+          <div class="col">
+                <input  aria-expanded="false" style=" margin-top: 80px;" type="button" onclick="enabel()" class="btn btn-danger" value="+ADD QUESTION">
+
+          </div>
+       
+        </div>
+        <hr>
+        
+        
+        <div class="row">
+          <div  style="width: 650pX;" >
+                <% if (comefrom === "creatQuize") {%>
+                  <% for(let q of question) {
+                    var quizeid=q.Quize_id
+                   } %>
+         
+                    <div class="form-horizontal">
+                    <a href="/savedquizes" style=" margin-left: 50px;font:bold; font-size: 20px " >save quize </a> 
+                    <a href="/publishQuiz/<%=quizeid%>" style=" margin-left: 150px;font:bold; font-size: 20px ">publish quize </a>
+                   
+                    <br>
+                    <br>
+                   </div>
+                <%}%>
+              <% if(!(question.length === 0) ) {
+                  
+                 
+                let i=1 
+                 %>
+               
+                    <% for(let q of question) {
+                      var x= q._id
+                      %>
+                      
+                      <h6><%=i%>:<%=q.Question%> </h6>
+                     <span style="font:100 bold;">a: </span> <span ><%=q.A%></span> 
+                     <span style="margin-left: 30px;font:100 bold;">b: </span><span ><%=q.B%></span> <br>
+                     <span style="font:100 bold;">c: </span><span ><%=q.C%> </span>
+                     <span style="margin-left: 30px;font:100 bold; ">d:</span><span style="color:blue" ><%=q.Correct%></span> 
+                     <span style="float: right;margin-right: 20px;">
+                        <input type="button" onclick='update("<%=q._id%>")'  value="Update"  />
+                        <a href="/deletqestion/<%=q._id%>" style="margin-left: 10px;"  href="" />Delet</a>
+                     </span>
+                     
+
+                       
+                     <hr>
+                     
+               <%i++ }}%>
+          </div>
+          <div   >
+                <form action="/creatQuize" method="POST" >
+                    <div id="di" style=" position: fixed;padding: 10px; visibility: hidden; border: solid gray 2px; background-color: rgb(245, 245, 201) ">
+                            <label style="color: tomato; font-size: 30px; font: bold; margin-left:10px;margin-top: 10px;" >question:</label> <input type="text" class="form-control" name="Question"  style="width:500px;  margin-top: 5px;margin-left: 10px;">
+                           
+            
+                            <br>
+                            <label style="color:blue; font:bold; margin-left: 30px"> choose1:</label> <input style="margin-left: 47px" type="text"  name="A" >
+                            <br>
+                            <br>
+                            <label style="color:blue; font:bold; margin-left: 30px"> choose2:</label> <input style="margin-left: 47px;" type="text"  name="B" >
+                            <br>
+                            <br>
+                            <label style="color:blue; font:bold; margin-left: 30px"> choose3:</label> <input style="margin-left: 47px" type="text" name="C" >
+                            <br>
+                            <br>
+                            <label style="color:green; font:bold; margin-left: 30px"> correct answer: </label> <input  type="text" name="correct"  >
+                            <br>
+                            <input id="name2" type="hidden" name="name" >
+                            <input id="q_id" type="hidden" name="q_id" value="" >
+                            <input id="time2" type="hidden" name="time" >
+                            <input id="place" type="hidden" name="come" value="creatQuize" >
+                            
+                            <input  style=" margin-left: 150px" type="submit"  onclick="save()"  class="btn btn-primary"  value="SAVE QUESTION">
+                            <a onclick='cancel()' class="btn btn-primary"  href="" >cancel</a>
+
+                    </div>
+                </form>
+                   
+            
+          </div>
+        </div>
+      </div>
+
+
+
+      
+      
+      <script type="text/javascript">
+
+      function enabel(){
+        
+        var name = document.getElementById("name").value;
+        var time = document.getElementById("time").value;
+        
+        document.getElementById("name2").value=name;
+         document.getElementById("time2").value=time;
+        console.log(name);
+        console.log(time);
+
+        document.getElementById('di').style.visibility='visible'
+        console.log("call function")
+      }
+    
+    function update(id){
+      
+      
+      console.log("question id for update=" +id);
+      document.getElementById('di').style.visibility='visible';
+      document.getElementById("q_id").value=id;
+     
+    }
+      function save()
+      {
+        document.getElementById('di').style.visibility='hidden'  
+      }
+       
+      function cancel()
+      { 
+        
+        document.getElementById('di').style.visibility='hidden'  
+      }
+      </script>
+
+
+<%- include('parts/footer')%>
